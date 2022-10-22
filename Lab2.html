@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="http://fonts.googleapis.com/css?family=Tangerine"
+              rel="stylesheet" type="text/css">
+        <link type="text/css" href="layout.css" rel="stylesheet">
+         <link rel="stylesheet" href="style.css">
+          <link rel="shortcut icon" href="shortcut_icon.png">
+        <title>Lotka-Volterra</title>
+    </head>
+    <body onload="start();">
+        <h1>Игра жизни Конвея<br>ИДМ-22-03</h1>
+        <!-- left panel. -->
+        <section>
+                    <h2>Параметры</h2>
+
+          <table><tbody>
+            <form name="form">
+
+              <tr><th>Выберите компоновку точек:   <select name="config">
+
+                  <option value="point">Точка</option>
+                  <option value="glider">Планер</option>
+                  <option value="hive">Улий</option>
+              </select></th>
+
+
+</form>
+              <tr><th>Введите скорость игры:     <input type="text" id="speed"></th>
+
+          </tbody></table>
+          <p> Для заметного эффекта рекомендуется вводить
+          скорость от 1(max) до 5(min).</p>
+
+            <h2>Краткое описание</h2>
+            <p>Игра жизни, также известная просто как "Жизнь", представляет собой
+клеточный автомат, разработанный британским математиком Джоном Хортоном Конвеем
+в 1970 году. Это игра с нулевым игроком, что означает, что ее эволюция
+определяется ее начальным состоянием, не требующим дополнительного ввода.
+Человек взаимодействует с игрой "Жизнь", создавая начальную конфигурацию и
+наблюдая, как она развивается.
+ <a href="https://ru.wikipedia.org/wiki/Игра_«Жизнь»">
+            Подробнее</a>.</p>
+            <ul>
+                <li>Место действия игры — размеченная на клетки плоскость,
+                  которая может быть безграничной, ограниченной или замкнутой.</li>
+                <li>Каждая клетка на этой поверхности имеет восемь соседей,
+                  окружающих её, и может находиться в двух состояниях:
+                  быть «живой» или «мёртвой».</li>
+<li>Распределение живых клеток в начале игры называется первым поколением.
+  Каждое следующее поколение рассчитывается на основе предыдущего по правилам:
+1) в пустой клетке, с которой соседствуют три живые клетки, зарождается
+жизнь;
+2) если у живой клетки есть две или три живые соседки, то эта клетка продолжает
+жить; 3)в противном случае клетка умирает.</li>
+<li>Игра прекращается, если
+1) на поле не останется ни одной «живой» клетки;
+2) конфигурация на очередном шаге в точности повторит
+ себя же на одном из более ранних шагов
+3) при очередном шаге ни одна из клеток не меняет своего состояния. </li>
+            </ul>
+
+
+        </section>
+        <!-- core app. -->
+        <div>
+          <canvas id="c1" width="300" height="300"></canvas>
+  <p>Количество циклов: <span id="count">0</span></p>
+          <form action="javascript:void(0);">
+                  <button title="Start simulation" onclick="startLife();">
+                      Начать симуляцию
+                  </button>
+              </form>
+        </div>
+        <footer class="avtors">
+                    <span class="avtorsT">Team ИДМ-22-03:</span>
+                    <br />
+                    <a href="https://alexultrax.github.io/Dalechin-Aleksander/" target="_blank">Далечин А. С. </a>
+
+                     <br /><br />
+                    <span class="avtorsT">Исходники: </span>
+                    <br />
+                    <a href="https://github.com/Alexultrax/Dalechin-lab2" class="avtors">Репозиторий GitHub</a>
+                </footer>
+            <script src="js.js" defer></script>
+    </body>
+</html>
